@@ -5,6 +5,9 @@
 
 Performs syntax-checks of your Blade templates. Just that.
 
+<!-- markdownlint-disable-next-line -->
+<img width="780" alt="coc-blade-linter-demo" src="https://user-images.githubusercontent.com/188642/114817122-68c11f00-9df4-11eb-8405-ba63f12e8821.gif">
+
 ## Features
 
 - Lint by [laravel-blade-linter](https://github.com/bdelespierre/laravel-blade-linter)
