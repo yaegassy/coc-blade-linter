@@ -16,7 +16,9 @@ Performs syntax-checks of your Blade templates. Just that.
 
 **CocInstall**:
 
-> TODO
+```vim
+:CocInstall coc-blade-linter
+```
 
 **vim-plug**:
 
