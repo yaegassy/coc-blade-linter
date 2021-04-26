@@ -11,7 +11,7 @@ Performs syntax-checks of your Blade templates. Just that.
 ## Features
 
 - Lint by [laravel-blade-linter](https://github.com/bdelespierre/laravel-blade-linter)
-- Downloader (laravel-blade-linter tool)
+- Downloader (laravel-blade-linter tool) | [DEMO](https://github.com/yaegassy/coc-blade-linter/pull/1)
 
 ## Install
 
