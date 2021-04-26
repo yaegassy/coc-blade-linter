@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
+    "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "coc.nvim": "^0.0.80",
@@ -44,7 +45,9 @@
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.2.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "https-proxy-agent": "^5.0.0",
+    "node-fetch": "^2.6.0"
   },
   "activationEvents": [
     "onLanguage:blade"
@@ -58,6 +61,11 @@
           "type": "boolean",
           "default": true,
           "description": "Enable coc-blade-linter extension"
+        },
+        "bladeLinter.toolPath": {
+          "type": "string",
+          "default": "",
+          "description": "The path to the laravel-blade-linter phar file (Absolute path)"
         },
         "bladeLinter.lintOnOpen": {
           "type": "boolean",
@@ -75,6 +83,12 @@
           "description": "Lint blade file on save"
         }
       }
-    }
+    },
+    "commands": [
+      {
+        "command": "bladeLinter.download",
+        "title": "Download laravel-blade-linter"
+      }
+    ]
   }
 }
