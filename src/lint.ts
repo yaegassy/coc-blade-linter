@@ -14,10 +14,14 @@ import cp from 'child_process';
 
 export class LintEngine {
   private collection: DiagnosticCollection;
+  private usePhar: boolean;
+  private toolPath: string;
   private outputChannel: OutputChannel;
 
-  constructor(outputChannel: OutputChannel) {
+  constructor(usePhar: boolean, toolPath: string, outputChannel: OutputChannel) {
     this.collection = languages.createDiagnosticCollection('bladeLinter');
+    this.usePhar = usePhar;
+    this.toolPath = toolPath;
     this.outputChannel = outputChannel;
   }
 
@@ -32,8 +36,13 @@ export class LintEngine {
     // Use shell
     const opts = { cwd, shell: true };
 
-    args.push('artisan');
-    args.push('blade:lint');
+    if (this.usePhar) {
+      args.push(this.toolPath);
+      args.push('lint');
+    } else {
+      args.push('artisan');
+      args.push('blade:lint');
+    }
 
     this.outputChannel.appendLine(`${'#'.repeat(10)} bladeLinter\n`);
     this.outputChannel.appendLine(`Cwd: ${opts.cwd}`);
@@ -72,7 +81,7 @@ export class LintEngine {
             msg = match[1];
             line = parseInt(match[2]);
           } else {
-            msg = 'There is a problem running blade:lint';
+            msg = 'There is a problem running larvel-blade-linter';
           }
 
           // position is "real line" - 1

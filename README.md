@@ -11,6 +11,7 @@ Performs syntax-checks of your Blade templates. Just that.
 ## Features
 
 - Lint by [laravel-blade-linter](https://github.com/bdelespierre/laravel-blade-linter)
+- Downloader (laravel-blade-linter tool)
 
 ## Install
 
@@ -26,17 +27,17 @@ Performs syntax-checks of your Blade templates. Just that.
 Plug 'yaegassy/coc-blade-linter', {'do': 'yarn install --frozen-lockfile'}
 ```
 
-## Require
+## Detects: "laravel-blade-linter" tool
 
-Install `bdelespierre/laravel-blade-linter` in your "laravel" project.
+Detects the `laravel-blade-linter`. They are prioritized in order from the top.
 
-```sh
-composer require --dev bdelespierre/laravel-blade-linter
-```
+1. `bladeLinter.toolPath`
+1. `vendor/bdelespierre/laravel-blade-linter` package. (`composer require --dev bdelespierre/laravel-blade-linter`)
+1. `laravel-blade-linter` retrieved by the download feature. (`:CocCommand bladeLinter.download`)
+    - Mac/Linux: `~/.config/coc/extensions/coc-blade-linter-data/laravel-blade-linter`
+    - Windows: `~/AppData/Local/coc/extensions/coc-blade-linter-data/laravel-blade-linter`
 
-If you **do not have "laravel-blade-linter" installed**, the extension will be `disabled`.
-
-----
+## Filetype
 
 The "filetype" must be `blade` for this extension to work.
 
@@ -46,18 +47,18 @@ Set up `autocmd BufNewFile,BufRead *.blade.php set filetype=blade` in `.vimrc/in
 ## Configuration options
 
 - `bladeLinter.enable`: Enable coc-blade-linter extension, default: `true`
+- `bladeLinter.toolPath`: The path to the laravel-blade-linter phar file (Absolute path), default: `""`
 - `bladeLinter.lintOnOpen`: Lint blade file on opening, default: `true`
 - `bladeLinter.lintOnChange`: Lint blade file on change, default: `true`
 - `bladeLinter.lintOnSave`: Lint blade file on save, default: `true`
 
+## Commands
+
+- `bladeLinter.download`: Download laravel-blade-linter
+
 ## Related coc.nvim extension
 
 - [yaegassy/coc-blade-formatter](https://github.com/yaegassy/coc-blade-formatter)
-
-## WIP(Plan?)
-
-<!-- markdownlint-disable-next-line -->
-- Integrate `coc-blade-linter`, `coc-blade-formatter` and VSCode's [Laravel Snippets](hjttps://github.com/onecentlin/laravel5-snippets-vscode) into an extension called `coc-laravel-blade`?
 
 ## Thanks
 
