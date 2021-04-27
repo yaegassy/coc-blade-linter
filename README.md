@@ -49,7 +49,6 @@ Set up `autocmd BufNewFile,BufRead *.blade.php set filetype=blade` in `.vimrc/in
 - `bladeLinter.enable`: Enable coc-blade-linter extension, default: `true`
 - `bladeLinter.toolPath`: The path to the laravel-blade-linter phar file (Absolute path), default: `""`
 - `bladeLinter.lintOnOpen`: Lint blade file on opening, default: `true`
-- `bladeLinter.lintOnChange`: Lint blade file on change, default: `true`
 - `bladeLinter.lintOnSave`: Lint blade file on save, default: `true`
 
 ## Commands

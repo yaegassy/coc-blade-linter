@@ -74,19 +74,6 @@ export async function activate(context: ExtensionContext): Promise<void> {
     );
   }
 
-  const onChange = extensionConfig.get<boolean>('lintOnChange');
-  if (onChange) {
-    workspace.onDidChangeTextDocument(
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      async (_e) => {
-        const doc = await workspace.document;
-        await engine.lint(doc.textDocument);
-      },
-      null,
-      subscriptions
-    );
-  }
-
   const onSave = extensionConfig.get<boolean>('lintOnSave');
   if (onSave) {
     workspace.onDidSaveTextDocument(

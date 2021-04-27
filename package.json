@@ -72,11 +72,6 @@
           "default": true,
           "description": "Lint blade file on opening"
         },
-        "bladeLinter.lintOnChange": {
-          "type": "boolean",
-          "default": true,
-          "description": "Lint blade file on change"
-        },
         "bladeLinter.lintOnSave": {
           "type": "boolean",
           "default": true,
