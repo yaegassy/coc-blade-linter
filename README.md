@@ -1,4 +1,10 @@
-# coc-blade-linter
+# [Archived] coc-blade-linter
+
+## WARNING
+
+This project is no longer maintained. Please switch to its successor, [coc-blade](https://github.com/yaegassy/coc-blade).
+
+---
 
 <!-- markdownlint-disable-next-line -->
 [Laravel Blade Linter](https://github.com/bdelespierre/laravel-blade-linter) extension for [coc.nvim](https://github.com/neoclide/coc.nvim)
